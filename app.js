@@ -25,8 +25,8 @@ app.use (helmet());
 app.use(cors());
 app.use(compression());
 app.use(morgan('combined' , {stream:accessLogStream}));
-const MONGODB_URI = process.env.MONGODB_URI
-// const MONGODB_URI = 'mongodb+srv://bolarinwa:JAlbZjlfi6P18f62@cluster0-25yze.mongodb.net/doit?retryWrites=true&w=majority'
+// const MONGODB_URI = process.env.MONGODB_URI
+const MONGODB_URI = 'mongodb+srv://bolarinwa:JAlbZjlfi6P18f62@cluster0-25yze.mongodb.net/doit?retryWrites=true&w=majority'
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
