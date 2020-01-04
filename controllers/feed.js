@@ -6,7 +6,7 @@ const schedule = require('node-schedule');
 const Task = require('../models/feed');
 const User = require('../models/user');
 const moment = require('moment');
-const messagebird = require('messagebird')(process.env.MESSAGE_KEY);
+const messagebird = require('messagebird')(`${process.env.MESSAGE_KEY}`);
 dotenv.config();
 // const transporter = nodemailer.createTransport({
 //   service: 'gmail',
