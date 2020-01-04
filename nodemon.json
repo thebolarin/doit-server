@@ -1,5 +1,10 @@
+
+
 {
-    "env":{
-      
+    "env": {
+        "MONGO_USER": "bolarinwa",
+        "MONGO_PASSWORD": "JAlbZjlfi6P18f62",
+        "MONGO_DEFAULT_DATABASE": "doit",
+        "MESSAGE_KEY":"Bw7YIC0EGO21xK8g9DvrciPdf"
     }
 }

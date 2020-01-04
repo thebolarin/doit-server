@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const dotenv = require('dotenv')
+// const dotenv = require('dotenv')
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -13,7 +13,7 @@ const noteRoutes = require('./routes/note');
 const authRoutes = require('./routes/auth');
 const compression = require('compression');
 
-dotenv.config();
+// dotenv.config();
 
 const accessLogStream = fs.createWriteStream(
   path.join(__dirname,'access.log'),
@@ -25,8 +25,12 @@ app.use (helmet());
 app.use(cors());
 app.use(compression());
 app.use(morgan('combined' , {stream:accessLogStream}));
-// const MONGODB_URI = process.env.MONGODB_URI
-const MONGODB_URI = 'mongodb+srv://bolarinwa:JAlbZjlfi6P18f62@cluster0-25yze.mongodb.net/doit?retryWrites=true&w=majority'
+
+const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USER}:${
+  process.env.MONGO_PASSWORD
+}@cluster0-25yze.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}`;
+
+
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
